@@ -12,4 +12,6 @@ struct ItunesData {
     var trackName: String?
     var artistName: String?
     var previewUrl: String?
+    var artworkUrl60: String?
+    var collectionName: String?
 }

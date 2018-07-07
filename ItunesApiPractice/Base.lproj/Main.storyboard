@@ -49,7 +49,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-wC-vVE">
-                                                    <rect key="frame" x="84" y="42" width="229" height="16"/>
+                                                    <rect key="frame" x="84" y="39" width="229" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -57,15 +57,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nlh-xf-wW1" firstAttribute="bottom" secondItem="Qjk-1O-22t" secondAttribute="bottom" id="0Mv-BP-8Lj"/>
-                                                <constraint firstItem="j40-Iw-Ueu" firstAttribute="top" secondItem="MyQ-Un-9da" secondAttribute="top" constant="17" id="0Wx-CV-iHC"/>
-                                                <constraint firstItem="nlh-xf-wW1" firstAttribute="top" secondItem="5pu-wC-vVE" secondAttribute="bottom" constant="3" id="183-Ao-n3W"/>
+                                                <constraint firstItem="5pu-wC-vVE" firstAttribute="centerY" secondItem="Qjk-1O-22t" secondAttribute="centerY" id="9UI-YQ-PNU"/>
                                                 <constraint firstAttribute="bottom" secondItem="Qjk-1O-22t" secondAttribute="bottom" constant="17.5" id="HVS-mh-Ria"/>
                                                 <constraint firstAttribute="trailing" secondItem="j40-Iw-Ueu" secondAttribute="trailing" constant="62" id="JLE-CB-ggm"/>
                                                 <constraint firstItem="nlh-xf-wW1" firstAttribute="leading" secondItem="5pu-wC-vVE" secondAttribute="leading" id="PJz-ub-fGc"/>
                                                 <constraint firstItem="j40-Iw-Ueu" firstAttribute="leading" secondItem="MyQ-Un-9da" secondAttribute="leading" constant="84" id="ZMj-Mb-3t6"/>
                                                 <constraint firstItem="5pu-wC-vVE" firstAttribute="trailing" secondItem="j40-Iw-Ueu" secondAttribute="trailing" id="bOG-sN-6fc"/>
-                                                <constraint firstItem="5pu-wC-vVE" firstAttribute="top" secondItem="j40-Iw-Ueu" secondAttribute="bottom" constant="4" id="kxg-9k-f1O"/>
                                                 <constraint firstItem="Qjk-1O-22t" firstAttribute="top" secondItem="MyQ-Un-9da" secondAttribute="top" constant="17" id="mWe-Lv-mHp"/>
+                                                <constraint firstItem="j40-Iw-Ueu" firstAttribute="top" secondItem="Qjk-1O-22t" secondAttribute="top" id="mir-mr-iVE"/>
                                                 <constraint firstItem="Qjk-1O-22t" firstAttribute="leading" secondItem="MyQ-Un-9da" secondAttribute="leading" constant="15" id="spS-e0-Kbj"/>
                                                 <constraint firstItem="5pu-wC-vVE" firstAttribute="leading" secondItem="j40-Iw-Ueu" secondAttribute="leading" id="w5S-q8-1jT"/>
                                                 <constraint firstItem="nlh-xf-wW1" firstAttribute="trailing" secondItem="5pu-wC-vVE" secondAttribute="trailing" id="yot-T4-OqE"/>

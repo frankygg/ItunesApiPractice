@@ -19,8 +19,7 @@ class CustomTableViewCell: UITableViewCell {
         // Initialization code
         artworkUrl60UIImage.layer.cornerRadius = 4.0
         artworkUrl60UIImage.layer.borderWidth = 1.0
-        artworkUrl60UIImage.layer.borderColor = UIColor(displayP3Red: 231/255, green: 231/255, blue: 231/255, alpha: 0.9).cgColor
-//        userImage.contentMode = UIViewContentMode.scaleAspectFill
+        artworkUrl60UIImage.layer.borderColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 0.9).cgColor
         artworkUrl60UIImage.layer.masksToBounds = true;
     }
 

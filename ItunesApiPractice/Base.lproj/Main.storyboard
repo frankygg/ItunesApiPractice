@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ItunesApiPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TBA-bd-9Wc">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomTableViewCell" id="Hmj-GT-TPZ" customClass="CustomTableViewCell" customModule="ItunesApiPractice" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Hmj-GT-TPZ" id="MyQ-Un-9da">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j40-Iw-Ueu">
+                                                    <rect key="frame" x="33" y="0.0" width="291" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pu-wC-vVE">
+                                                    <rect key="frame" x="33" y="22" width="301" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="j40-Iw-Ueu" firstAttribute="top" secondItem="MyQ-Un-9da" secondAttribute="top" id="0Wx-CV-iHC"/>
+                                                <constraint firstAttribute="trailing" secondItem="j40-Iw-Ueu" secondAttribute="trailing" constant="51" id="JLE-CB-ggm"/>
+                                                <constraint firstItem="j40-Iw-Ueu" firstAttribute="leading" secondItem="MyQ-Un-9da" secondAttribute="leading" constant="33" id="ZMj-Mb-3t6"/>
+                                                <constraint firstAttribute="trailing" secondItem="5pu-wC-vVE" secondAttribute="trailing" constant="41" id="nj4-sT-5aw"/>
+                                                <constraint firstItem="5pu-wC-vVE" firstAttribute="leading" secondItem="j40-Iw-Ueu" secondAttribute="leading" id="w5S-q8-1jT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="5pu-wC-vVE" secondAttribute="bottom" constant="1" id="Cem-Dp-Jym"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="5pu-wC-vVE" id="5ST-bj-vHk"/>
+                                            <outlet property="titleLabel" destination="j40-Iw-Ueu" id="5ka-ft-P0D"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="w69-Go-9Pc">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TBA-bd-9Wc" secondAttribute="trailing" id="HIZ-BZ-O1h"/>
+                            <constraint firstItem="TBA-bd-9Wc" firstAttribute="top" secondItem="w69-Go-9Pc" secondAttribute="bottom" id="LSY-Am-ySn"/>
+                            <constraint firstItem="w69-Go-9Pc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UkK-61-j7d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TBA-bd-9Wc" secondAttribute="bottom" id="Wkr-0m-Lm6"/>
+                            <constraint firstItem="w69-Go-9Pc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ggg-4e-Krh"/>
+                            <constraint firstItem="TBA-bd-9Wc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qt5-wv-s3m"/>
+                            <constraint firstItem="w69-Go-9Pc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zPO-g2-Di7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>

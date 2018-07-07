@@ -60,20 +60,10 @@ class Download {
                 } catch let error as NSError {
                     print("Error parsing results: \(error.localizedDescription)")
                 }
-//                completion(data)
             }
         }
         task.resume()
         }
     }
     
-    func localFilePathForUrl(_ previewUrl: String) -> URL? {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
-        if let url = URL(string: previewUrl) {
-            //      , let lastPathComponent = url.lastPathComponent
-            let fullPath = documentsPath.appendingPathComponent(url.lastPathComponent)
-            return URL(fileURLWithPath:fullPath)
-        }
-        return nil
-    }
 }

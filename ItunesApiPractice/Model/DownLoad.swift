@@ -22,10 +22,11 @@ class Download {
         
         let request = URLRequest(url: queryedURL)
         
-        fetchedDataByDataTask(from: request, completion: completion)
+            fetchedDataByDataTask(from: request, completion: completion)
     }
+    
     private func fetchedDataByDataTask(from request: URLRequest, completion: @escaping ([ItunesData]) -> Void){
-        
+        DispatchQueue.global().async{
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             if error != nil{
@@ -63,6 +64,7 @@ class Download {
             }
         }
         task.resume()
+        }
     }
     
     func localFilePathForUrl(_ previewUrl: String) -> URL? {

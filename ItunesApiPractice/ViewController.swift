@@ -98,6 +98,10 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
 }
 
 extension ViewController: UITableViewDelegate {
@@ -111,5 +115,6 @@ extension ViewController: UITableViewDelegate {
             present(tunePlayerViewController, animated: true, completion: nil)
         
     }
+    
 }
 

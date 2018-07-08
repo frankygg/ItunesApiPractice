@@ -61,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				B70FD78920F070F700335CA6 /* Model */,
-				B70FD78520F0704A00335CA6 /* Cell */,
+				B70FD78520F0704A00335CA6 /* View */,
 				B70FD77320F069CF00335CA6 /* AppDelegate.swift */,
 				B70FD77520F069CF00335CA6 /* ViewController.swift */,
 				B70FD77720F069CF00335CA6 /* Main.storyboard */,
@@ -72,12 +72,12 @@
 			path = ItunesApiPractice;
 			sourceTree = "<group>";
 		};
-		B70FD78520F0704A00335CA6 /* Cell */ = {
+		B70FD78520F0704A00335CA6 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B70FD78620F0706000335CA6 /* CustomTableViewCell.swift */,
 			);
-			path = Cell;
+			path = View;
 			sourceTree = "<group>";
 		};
 		B70FD78920F070F700335CA6 /* Model */ = {

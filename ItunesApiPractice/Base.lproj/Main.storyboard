@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,11 +36,10 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qjk-1O-22t">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="picture_placeholder01" translatesAutoresizingMaskIntoConstraints="NO" id="Qjk-1O-22t">
                                                     <rect key="frame" x="15" y="17" width="60" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="Y8g-7e-oKS"/>
-                                                        <constraint firstAttribute="width" constant="60" id="qov-vS-5tj"/>
+                                                        <constraint firstAttribute="width" secondItem="Qjk-1O-22t" secondAttribute="height" multiplier="1:1" id="Txt-6S-JnV"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlh-xf-wW1">
@@ -57,13 +57,14 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="nlh-xf-wW1" firstAttribute="bottom" secondItem="Qjk-1O-22t" secondAttribute="bottom" id="0Mv-BP-8Lj"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qjk-1O-22t" secondAttribute="bottom" priority="999" constant="17.5" id="3Jm-WG-nWc"/>
+                                                <constraint firstItem="j40-Iw-Ueu" firstAttribute="leading" secondItem="Qjk-1O-22t" secondAttribute="trailing" constant="9" id="4OC-8R-1J6"/>
                                                 <constraint firstItem="5pu-wC-vVE" firstAttribute="centerY" secondItem="Qjk-1O-22t" secondAttribute="centerY" id="9UI-YQ-PNU"/>
                                                 <constraint firstAttribute="trailing" secondItem="j40-Iw-Ueu" secondAttribute="trailing" constant="62" id="JLE-CB-ggm"/>
-                                                <constraint firstAttribute="bottom" secondItem="Qjk-1O-22t" secondAttribute="bottom" priority="999" constant="17.5" id="MnK-RO-kNh"/>
                                                 <constraint firstItem="nlh-xf-wW1" firstAttribute="leading" secondItem="5pu-wC-vVE" secondAttribute="leading" id="PJz-ub-fGc"/>
+                                                <constraint firstItem="Qjk-1O-22t" firstAttribute="top" secondItem="MyQ-Un-9da" secondAttribute="top" constant="17" id="VLm-cz-DVX"/>
                                                 <constraint firstItem="j40-Iw-Ueu" firstAttribute="leading" secondItem="MyQ-Un-9da" secondAttribute="leading" constant="84" id="ZMj-Mb-3t6"/>
                                                 <constraint firstItem="5pu-wC-vVE" firstAttribute="trailing" secondItem="j40-Iw-Ueu" secondAttribute="trailing" id="bOG-sN-6fc"/>
-                                                <constraint firstItem="Qjk-1O-22t" firstAttribute="top" secondItem="MyQ-Un-9da" secondAttribute="top" constant="17" id="mWe-Lv-mHp"/>
                                                 <constraint firstItem="j40-Iw-Ueu" firstAttribute="top" secondItem="Qjk-1O-22t" secondAttribute="top" id="mir-mr-iVE"/>
                                                 <constraint firstItem="Qjk-1O-22t" firstAttribute="leading" secondItem="MyQ-Un-9da" secondAttribute="leading" constant="15" id="spS-e0-Kbj"/>
                                                 <constraint firstItem="5pu-wC-vVE" firstAttribute="leading" secondItem="j40-Iw-Ueu" secondAttribute="leading" id="w5S-q8-1jT"/>
@@ -107,4 +108,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="picture_placeholder01" width="48" height="56"/>
+    </resources>
 </document>

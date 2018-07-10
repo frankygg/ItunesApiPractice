@@ -120,6 +120,9 @@ extension ViewController: UITableViewDataSource {
         
         cell.collectionNameLabel.text = searchResults[indexPath.row].collectionName
         
+        //default image
+        cell.artworkUrl60UIImage.image = UIImage(named: "picture_placeholder01")
+        
         if let image = cache.object(forKey: searchResults[indexPath.row].artworkUrl100 as AnyObject) {
             
             cell.artworkUrl60UIImage.image = image as? UIImage

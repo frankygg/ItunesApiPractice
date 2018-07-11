@@ -33,73 +33,73 @@ class Download {
         
         DispatchQueue.global().async{
             
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            
-            if error != nil{
+            let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
                 
-                print(error as Any)
-                
-            }else{
-                
-                guard let data = data else{return}
-                
-                do {
+                if error != nil{
                     
-                    if let response = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue:0)) as? [String: AnyObject] {
+                    print(error as Any)
+                    
+                }else{
+                    
+                    guard let data = data else{return}
+                    
+                    do {
                         
-                        var searchResults = [ItunesData]()
-                        
-                        // Get the results array
-                        if let array: AnyObject = response["results"] {
+                        if let response = try JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions(rawValue:0)) as? [String: AnyObject] {
                             
-                            for trackDictonary in array as! [AnyObject] {
+                            var searchResults = [ItunesData]()
+                            
+                            // Get the results array
+                            if let array: AnyObject = response["results"] {
                                 
-                                if let trackDictonary = trackDictonary as? [String: AnyObject], let previewUrl = trackDictonary["previewUrl"] as? String {
+                                for trackDictonary in array as! [AnyObject] {
                                     
-                                    // Parse the search result
-                                    let name = trackDictonary["trackName"] as? String
-                                    
-                                    let artist = trackDictonary["artistName"] as? String
-                                    
-                                    let artworkUrl100 = trackDictonary["artworkUrl100"] as? String
-                                    
-                                    let collectionName = trackDictonary["collectionName"] as? String
-                                    
-                                    searchResults.append(ItunesData(trackName: name, artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100, collectionName: collectionName))
-                                    
-                                } else {
-                                    
-                                    print("Not a dictionary")
+                                    if let trackDictonary = trackDictonary as? [String: AnyObject], let previewUrl = trackDictonary["previewUrl"] as? String {
+                                        
+                                        // Parse the search result
+                                        let name = trackDictonary["trackName"] as? String
+                                        
+                                        let artist = trackDictonary["artistName"] as? String
+                                        
+                                        let artworkUrl100 = trackDictonary["artworkUrl100"] as? String
+                                        
+                                        let collectionName = trackDictonary["collectionName"] as? String
+                                        
+                                        searchResults.append(ItunesData(trackName: name, artistName: artist, previewUrl: previewUrl, artworkUrl100: artworkUrl100, collectionName: collectionName))
+                                        
+                                    } else {
+                                        
+                                        print("Not a dictionary")
+                                        
+                                    }
                                     
                                 }
                                 
+                                completion(searchResults)
+                                
+                            } else {
+                                
+                                print("Results key not found in dictionary")
+                                
                             }
-                            
-                            completion(searchResults)
                             
                         } else {
                             
-                            print("Results key not found in dictionary")
+                            print("JSON Error")
                             
                         }
                         
-                    } else {
+                    } catch let error as NSError {
                         
-                        print("JSON Error")
+                        print("Error parsing results: \(error.localizedDescription)")
                         
                     }
-                    
-                } catch let error as NSError {
-                    
-                    print("Error parsing results: \(error.localizedDescription)")
                     
                 }
                 
             }
             
-        }
-            
-        task.resume()
+            task.resume()
             
         }
         

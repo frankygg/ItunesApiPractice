@@ -9,7 +9,7 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var collectionNameLabel: UILabel!
     @IBOutlet weak var artworkUrl60UIImage: UIImageView!
     @IBOutlet weak var artistLabel: UILabel!
@@ -23,22 +23,11 @@ class CustomTableViewCell: UITableViewCell {
         artworkUrl60UIImage.contentMode = .scaleAspectFit
         artworkUrl60UIImage.layer.masksToBounds = true
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
-
-//extension UIImageView {
-//    open override func draw(_ rect: CGRect) {
-//        self.layer.cornerRadius = 4.0
-//        self.layer.borderWidth = 1.0
-//        self.layer.borderColor = UIColor(red: 231/255, green: 231/255, blue: 231/255, alpha: 0.9).cgColor
-//        self.layer.masksToBounds = true
-//
-//    }
-//
-//}

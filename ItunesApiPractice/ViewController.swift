@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         var recognizer = UITapGestureRecognizer(target:self, action: #selector(dismissKeyboard))
         return recognizer
     }()
-
+    
     @IBOutlet weak var customTableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         searchBar.resignFirstResponder()
         
     }
-
+    
 }
 
 extension ViewController: UISearchBarDelegate {
@@ -70,17 +70,17 @@ extension ViewController: UISearchBarDelegate {
             
         } else {
             
-        Download.shared.requestWithURL(searchText: text) { [weak self] result in
-            
-            DispatchQueue.main.async {
+            Download.shared.requestWithURL(searchText: text) { [weak self] result in
                 
-                self?.cache.setObject(result as AnyObject, forKey: text as AnyObject)
-                
-                self?.searchResults = result
-                
-                self?.customTableView.reloadData()
+                DispatchQueue.main.async {
+                    
+                    self?.cache.setObject(result as AnyObject, forKey: text as AnyObject)
+                    
+                    self?.searchResults = result
+                    
+                    self?.customTableView.reloadData()
+                }
             }
-        }
         }
     }
     
@@ -129,24 +129,24 @@ extension ViewController: UITableViewDataSource {
             
         } else {
             
-        DispatchQueue.global().async {
-            
-            let data = NSData(contentsOf: URL(string: self.searchResults[indexPath.row].artworkUrl100!)!)
-            
-            DispatchQueue.main.async {
+            DispatchQueue.global().async {
                 
-                cell.artworkUrl60UIImage.image = UIImage(data: data! as Data)
+                let data = NSData(contentsOf: URL(string: self.searchResults[indexPath.row].artworkUrl100!)!)
                 
-                self.cache.setObject(UIImage(data: data! as Data)!, forKey: self.searchResults[indexPath.row].artworkUrl100 as AnyObject)
+                DispatchQueue.main.async {
+                    
+                    cell.artworkUrl60UIImage.image = UIImage(data: data! as Data)
+                    
+                    self.cache.setObject(UIImage(data: data! as Data)!, forKey: self.searchResults[indexPath.row].artworkUrl100 as AnyObject)
+                    
+                }
                 
             }
             
         }
-            
-        }
         
         cell.separatorInset = .zero
-
+        
         return cell
     }
     
@@ -161,24 +161,24 @@ extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-       guard let urlString = searchResults[indexPath.row].previewUrl , let url = URL(string: urlString) else {
-        
-        return
-        
+        guard let urlString = searchResults[indexPath.row].previewUrl , let url = URL(string: urlString) else {
+            
+            return
+            
         }
-            let itunePlayerViewController = AVPlayerViewController()
+        let itunePlayerViewController = AVPlayerViewController()
         
-            itunePlayerViewController.player = AVPlayer(url: url)
+        itunePlayerViewController.player = AVPlayer(url: url)
         
-            itunePlayerViewController.player?.play()
+        itunePlayerViewController.player?.play()
         
         if let imageView = setAVPlayerBackgroundImage(indexPath) {
-                
+            
             itunePlayerViewController.contentOverlayView?.addSubview(imageView)
-                
+            
         }
         
-            present(itunePlayerViewController, animated: true, completion: nil)
+        present(itunePlayerViewController, animated: true, completion: nil)
         
     }
     
@@ -187,19 +187,19 @@ extension ViewController: UITableViewDelegate {
         guard let image = cache.object(forKey: searchResults[indexPath.row].artworkUrl100 as AnyObject) else {
             return nil
         }
-            let imageView = UIImageView(image: image as? UIImage)
-            
-            let fullScreenSize = UIScreen.main.bounds.size
-            
-            imageView.frame = CGRect(x: 0, y: 0, width: fullScreenSize.width, height: fullScreenSize.width)
-            
-            imageView.contentMode = .center
-            
-            imageView.backgroundColor = UIColor.black
-            
-            imageView.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.5)
-    
-            return imageView
+        let imageView = UIImageView(image: image as? UIImage)
+        
+        let fullScreenSize = UIScreen.main.bounds.size
+        
+        imageView.frame = CGRect(x: 0, y: 0, width: fullScreenSize.width, height: fullScreenSize.width)
+        
+        imageView.contentMode = .center
+        
+        imageView.backgroundColor = UIColor.black
+        
+        imageView.center = CGPoint(x: fullScreenSize.width * 0.5, y: fullScreenSize.height * 0.5)
+        
+        return imageView
         
     }
     
